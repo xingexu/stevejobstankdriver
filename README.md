@@ -21,9 +21,9 @@ MediaPipe: https://ai.google.dev/edge/mediapipe/solutions/vision/face_landmarker
 
 ## Tank Driver 101 challenge
 
-Enter the driver station to start the animated periscope terrain and synthesized engine audio. Try now requests camera permission and loads the face model before entering the dashboard. There is one 30-second challenge with frequent random distractions. No separate camera-start button or level selector.
+Enter the driver station to start the animated periscope terrain and synthesized engine audio. Try now requests camera permission and loads the face model before entering the dashboard. There is one 15-second challenge with frequent random distractions. No separate camera-start button or level selector.
 
-Poker Face requires the mean of all six displayed trackers to stay at 30 or below for a continuous 30 seconds. Five facial percentages and absolute head tilt in degrees are averaged as game values. The current average is displayed. Any score above 30, missing face, hidden tab or sample gap over 500 ms resets the hold. These are game rules, not an emotion or fitness assessment.
+Poker Face requires the mean of all six displayed trackers to stay at 30 or below for a continuous 15 seconds. Five facial percentages and absolute head tilt in degrees are averaged as game values. The current average is displayed. Any score above 30, missing face, hidden tab or sample gap over 500 ms resets the hold. These are game rules, not an emotion or fitness assessment.
 
 The supplied duck image randomly appears inside the periscope with a synthesized triple quack. Synthetic gunshot bursts produce a short recoil effect. All sound is created locally with Web Audio; volume defaults to 35%, with mute and motion controls. Reduced-motion preferences are respected. Audio pauses when the page is hidden. No history or recording is added.
 
