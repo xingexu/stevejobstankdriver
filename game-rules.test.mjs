@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {isPokerFace} from './public/game-rules.js';
-const neutral={eyeLeft:.02,eyeRight:.03,mouth:.01,smile:.04,brow:.05};
-test('all displayed scores and absolute tilt must be below 10',()=>{assert.equal(isPokerFace(neutral,0),true);for(const name of Object.keys(neutral)){assert.equal(isPokerFace({...neutral,[name]:.1},0),false);assert.equal(isPokerFace({...neutral,[name]:.096},0),false);}assert.equal(isPokerFace(neutral,-11),false);assert.equal(isPokerFace(neutral,10),false);assert.equal(isPokerFace(neutral,9),true);});
-test('missing or invalid signals cannot produce a poker face',()=>{assert.equal(isPokerFace({},0),false);assert.equal(isPokerFace(null,0),false);assert.equal(isPokerFace(neutral,NaN),false);assert.equal(isPokerFace({...neutral,smile:NaN},0),false);});
+import {averageSignals,isPokerFace} from './public/game-rules.js';
+const signals=value=>({eyeLeft:value,eyeRight:value,mouth:value,smile:value,brow:value});
+test('average includes all six trackers, with absolute head tilt',()=>{assert.equal(averageSignals(signals(.3),30),30);assert.equal(averageSignals(signals(.3),-30),30);assert.equal(isPokerFace(signals(.3),30),true);assert.equal(isPokerFace(signals(.3),31),false);assert.equal(isPokerFace({...signals(.1),smile:1},0),true);});
+test('missing or invalid trackers cannot qualify',()=>{for(const values of [null,{}, {...signals(.1),mouth:NaN}, {...signals(.1),mouth:1.1}]){assert.equal(averageSignals(values,0),null);assert.equal(isPokerFace(values,0),false);}assert.equal(isPokerFace(signals(.1),NaN),false);});
