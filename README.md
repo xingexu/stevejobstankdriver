@@ -28,3 +28,5 @@ Poker Face requires the mean of all six displayed trackers to stay at 30 or belo
 The supplied duck image randomly appears inside the periscope with a synthesized triple quack. Synthetic gunshot bursts produce a short recoil effect. All sound is created locally with Web Audio; volume defaults to 35%, with mute and motion controls. Reduced-motion preferences are respected. Audio pauses when the page is hidden. No history or recording is added.
 
 Run `node --test game-rules.test.mjs` for threshold and missing-signal checks.
+
+At 15 continuous seconds the challenge succeeds. Holding the same average of 30 or below through 30 continuous seconds triggers a one-time celebration: 100 rubber ducks, triple-quack bursts and a synthesized victory fanfare. Above-threshold or missing readings reset the continuous hold. The celebration closes automatically after 8.5 seconds or with Keep driving. Mute, volume and reduced-motion controls apply.
