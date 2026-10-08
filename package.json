@@ -1,0 +1,1 @@
+{"name":"tank-face-dashboard","version":"1.0.0","private":true,"type":"module","scripts":{"start":"node server.mjs"},"dependencies":{"@mediapipe/tasks-vision":"1.1.0"}}
