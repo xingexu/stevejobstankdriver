@@ -8,7 +8,7 @@ fi
 if [[ ! -d node_modules/@mediapipe/tasks-vision ]]; then
   npm install || exit 1
 fi
-if curl -fsS http://localhost:3000/ | head -c 500 | grep -q 'Tank Face Dashboard'; then
+if curl -fsS http://localhost:3000/ | head -c 500 | grep -q 'Tank Driving 101'; then
   open 'http://localhost:3000'
   exit 0
 fi
